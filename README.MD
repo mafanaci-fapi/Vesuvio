@@ -1,4 +1,4 @@
-# BlackDoor
+# Vesúvio
 
 FAPI - Turma 2018 - Projeto Integrador II - Equipe Vesúvio
 
