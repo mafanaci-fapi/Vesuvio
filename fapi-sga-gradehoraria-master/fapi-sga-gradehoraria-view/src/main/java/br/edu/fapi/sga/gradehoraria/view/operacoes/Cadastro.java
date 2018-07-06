@@ -45,7 +45,7 @@ public class Cadastro {
 				gradeHoraria.setGrade(2, 0, defAula);
 				gradeHoraria.setGrade(3, 0, defAula);
 				System.out.println("");
-				System.out.println("Digite as aulas de terÃ§a-feira. ");
+				System.out.println("Digite as aulas de terca-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 1, defAula);

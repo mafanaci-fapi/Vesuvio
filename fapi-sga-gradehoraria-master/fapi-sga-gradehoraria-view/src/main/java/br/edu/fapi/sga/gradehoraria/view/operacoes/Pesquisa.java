@@ -33,9 +33,8 @@ public class Pesquisa {
 					}
 				} while (defCodigo == 0);
 				if (codigo == gradeHoraria.getCodigo()) {
-					gradeHoraria = gradeHorariaController.pesquisarGradeHoraria(gradeHoraria);
+					gradeHorariaController.pesquisarGradeHoraria(gradeHoraria);
 
-					System.out.println("");
 					System.out.println("Codigo: " + gradeHoraria.getCodigo());
 					System.out.println("Curso: " + gradeHoraria.getCurso());
 					System.out.println("Turma: " + gradeHoraria.getTurma());
@@ -57,7 +56,7 @@ public class Pesquisa {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção invalida.");
+				System.out.println("Opcao invalida.");
 				System.out.println("");
 				break;
 			}

@@ -6,7 +6,7 @@ import br.edu.fapi.sga.model.gradehoraria.GradeHoraria;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DummyGradeHorariaDAO implements GradeHorariaDAO {
+public class GradeHorariaDAOImpl implements GradeHorariaDAO {
 
     @Override
     public int create(GradeHoraria gradeHoraria) {
@@ -51,6 +51,12 @@ public class DummyGradeHorariaDAO implements GradeHorariaDAO {
         gradeHorariaResultado.setGrade(2,4,gradeHoraria.getGrade(2,4));
         gradeHorariaResultado.setGrade(3,4,gradeHoraria.getGrade(3,4));
 
+        System.out.println("");
+        System.out.println("--------------------------");
+        System.out.println("PESQUISA DE GRADE HORARIA.");
+        System.out.println("--------------------------");
+        System.out.println("");
+
         return gradeHorariaResultado;
     }
 
@@ -70,10 +76,10 @@ public class DummyGradeHorariaDAO implements GradeHorariaDAO {
         gradeHorariaResultado1.setGrade(2 , 0 ,"Desenvolvimento Web");
         gradeHorariaResultado1.setGrade(3 , 0 ,"Desenvolvimento Web");
 
-        gradeHorariaResultado1.setGrade( 0, 1 ,"Banco de Dados II");
-        gradeHorariaResultado1.setGrade( 1, 1 ,"Banco de Dados II");
-        gradeHorariaResultado1.setGrade( 2, 1 ,"Programacao Orientada a Objetos");
-        gradeHorariaResultado1.setGrade( 3, 1 ,"Programacao Orientada a Objetos");
+        gradeHorariaResultado1.setGrade(0, 1 ,"Banco de Dados II");
+        gradeHorariaResultado1.setGrade(1, 1 ,"Banco de Dados II");
+        gradeHorariaResultado1.setGrade(2, 1 ,"Programacao Orientada a Objetos");
+        gradeHorariaResultado1.setGrade(3, 1 ,"Programacao Orientada a Objetos");
 
         gradeHorariaResultado1.setGrade(0 , 2 ,"Analise e Projeto");
         gradeHorariaResultado1.setGrade(1 , 2 ,"Analise e Projeto");
@@ -169,6 +175,8 @@ public class DummyGradeHorariaDAO implements GradeHorariaDAO {
 
     @Override
     public int delete(GradeHoraria gradeHoraria){
+        gradeHoraria.setCodigo(-1);
+
         System.out.println("");
         System.out.println("---------------------------");
         System.out.println("GRADE EXCLUIDA COM SUCESSO.");

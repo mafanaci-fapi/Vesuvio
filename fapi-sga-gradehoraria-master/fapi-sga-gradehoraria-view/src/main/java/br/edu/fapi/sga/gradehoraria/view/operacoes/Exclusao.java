@@ -33,10 +33,7 @@ public class Exclusao {
 					}
 				} while (defCodigo == 0);
 				if (codigo == gradeHoraria.getCodigo()) {
-					gradeHoraria.setCodigo(-1);
-
 					gradeHorariaController.excluirGradeHoraria(gradeHoraria);
-
 				} else {
 					System.out.println("");
 					System.out.println("Grade nao encontrada");

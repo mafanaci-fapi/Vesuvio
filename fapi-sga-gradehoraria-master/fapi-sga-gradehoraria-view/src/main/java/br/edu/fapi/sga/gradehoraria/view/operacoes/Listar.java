@@ -37,7 +37,7 @@ public class Listar {
 	}
 
 	private void listarGradeHoraria(GradeHoraria gradeHoraria){
-		System.out.print("Turma: " + gradeHoraria.getTurma());
+		System.out.println("Turma: " + gradeHoraria.getTurma());
 		System.out.println("Curso:" + gradeHoraria.getCurso());
 		System.out.println(" --- ");
 		System.out.println("");
