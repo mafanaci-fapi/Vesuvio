@@ -2,30 +2,31 @@ package br.edu.fapi.sga.gradehoraria.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.gradehoraria.controller.GradeHorariaController;
 import br.edu.fapi.sga.model.gradehoraria.GradeHoraria;
 
 public class Exclusao {
-	public void excluirGradeHoraria(Scanner scanner, GradeHoraria gradeHoraria) {
+	public void excluirGradeHoraria(GradeHorariaController gradeHorariaController, Scanner scanner, GradeHoraria gradeHoraria) {
 		int opcao;
 		int codigo;
 		int defCodigo = 0;
 
 		do {
 			System.out.println("");
-			System.out.println("Digite 1 para excluir uma grade horária ou 0 para voltar.");
+			System.out.println("Digite 1 para excluir uma grade horaria ou 0 para voltar.");
 			opcao = scanner.nextInt();
 			scanner.nextLine();
 
 			switch (opcao) {
 			case 1:
 				System.out.println("");
-				System.out.println("EXCLUSÃO DE GRADE.");
+				System.out.println("EXCLUSAO DE GRADE.");
 				do {
 					System.out.print("Digite o codigo da grade: ");
 					codigo = scanner.nextInt();
 					scanner.nextLine();
 					if (codigo < 0) {
-						System.out.println("O código digitado não pode ser menor que 0. Por favor digite novamente.");
+						System.out.println("O codigo digitado nao pode ser menor que 0. Por favor digite novamente.");
 						System.out.println("");
 					} else {
 						defCodigo = 1;
@@ -33,14 +34,12 @@ public class Exclusao {
 				} while (defCodigo == 0);
 				if (codigo == gradeHoraria.getCodigo()) {
 					gradeHoraria.setCodigo(-1);
-					System.out.println("");
-					System.out.println("---------------------------");
-					System.out.println("GRADE EXCLUIDA COM SUCESSO.");
-					System.out.println("---------------------------");
-					System.out.println("");
+
+					gradeHorariaController.excluirGradeHoraria(gradeHoraria);
+
 				} else {
 					System.out.println("");
-					System.out.println("Grade não encontrada");
+					System.out.println("Grade nao encontrada");
 					System.out.println("");
 				}
 				break;
@@ -48,7 +47,7 @@ public class Exclusao {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção inválida");
+				System.out.println("Opcao invalida");
 				System.out.println("");
 				break;
 			}

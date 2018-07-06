@@ -2,6 +2,8 @@ package br.edu.fapi.sga.gradehoraria.view.menu;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.gradehoraria.controller.GradeHorariaController;
+import br.edu.fapi.sga.gradehoraria.controller.impl.GradeHorariaControllerImpl;
 import br.edu.fapi.sga.gradehoraria.view.operacoes.Atualiza;
 import br.edu.fapi.sga.gradehoraria.view.operacoes.Cadastro;
 import br.edu.fapi.sga.gradehoraria.view.operacoes.Exclusao;
@@ -11,6 +13,8 @@ import br.edu.fapi.sga.model.gradehoraria.GradeHoraria;
 
 public class Menu {
 	public void menu() {
+		GradeHorariaController gradeHorariaController = new GradeHorariaControllerImpl();
+
 		int opcao;
 		int voltar = 1;
 		Scanner scanner = new Scanner(System.in);
@@ -31,23 +35,23 @@ public class Menu {
 			switch (opcao) {
 			case 1:
 				Cadastro cadastro = new Cadastro();
-				cadastro.cadastrarGradeHoraria(scanner, gradeHoraria);
+				cadastro.cadastrarGradeHoraria(gradeHorariaController, scanner, gradeHoraria);
 				break;
 			case 2:
 				Exclusao exclusao = new Exclusao();
-				exclusao.excluirGradeHoraria(scanner, gradeHoraria);
+				exclusao.excluirGradeHoraria(gradeHorariaController, scanner, gradeHoraria);
 				break;
 			case 3:
 				Atualiza atualiza = new Atualiza();
-				atualiza.atualizarGradeHoraria(scanner, gradeHoraria);
+				atualiza.atualizarGradeHoraria(gradeHorariaController, scanner, gradeHoraria);
 				break;
 			case 4:
 				Pesquisa pesquisa = new Pesquisa();
-				pesquisa.pesquisarGradeHoraria(scanner, gradeHoraria);
+				pesquisa.pesquisarGradeHoraria(gradeHorariaController, scanner, gradeHoraria);
 				break;
 			case 5:
 				Listar listar = new Listar();
-				listar.listarGradeHoraria(gradeHoraria);
+				listar.listarGradeHoraria(gradeHorariaController, gradeHoraria);
 				break;
 			case 0:
 				System.out.println("");

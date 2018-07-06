@@ -2,10 +2,11 @@ package br.edu.fapi.sga.gradehoraria.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.gradehoraria.controller.GradeHorariaController;
 import br.edu.fapi.sga.model.gradehoraria.GradeHoraria;
 
 public class Pesquisa {
-	public void pesquisarGradeHoraria(Scanner scanner, GradeHoraria gradeHoraria) {
+	public void pesquisarGradeHoraria(GradeHorariaController gradeHorariaController, Scanner scanner, GradeHoraria gradeHoraria) {
 		int opcao;
 		int codigo;
 		int defCodigo = 0;
@@ -20,23 +21,25 @@ public class Pesquisa {
 			case 1:
 				do {
 					System.out.println("");
-					System.out.print("Digite o código da grade que deseja exibir: ");
+					System.out.print("Digite o codigo da grade que deseja exibir: ");
 					codigo = scanner.nextInt();
 					scanner.nextLine();
 					if (codigo < 0) {
 						System.out
-								.println("O código pesquisado não pode ser menor que 0. Por favor digite novamente.");
+								.println("O codigo pesquisado nao pode ser menor que 0. Por favor digite novamente.");
 						System.out.println("");
 					} else {
 						defCodigo = 1;
 					}
 				} while (defCodigo == 0);
 				if (codigo == gradeHoraria.getCodigo()) {
+					gradeHoraria = gradeHorariaController.pesquisarGradeHoraria(gradeHoraria);
+
 					System.out.println("");
-					System.out.println("Código: " + gradeHoraria.getCodigo());
+					System.out.println("Codigo: " + gradeHoraria.getCodigo());
 					System.out.println("Curso: " + gradeHoraria.getCurso());
 					System.out.println("Turma: " + gradeHoraria.getTurma());
-					System.out.println("Grade Horária: ");
+					System.out.println("Grade Horaria: ");
 					for (int linha = 0; linha < 4; linha++) {
 						for (int coluna = 0; coluna < 5; coluna++) {
 							System.out.printf("%35s", gradeHoraria.getGrade(linha, coluna));
@@ -46,7 +49,7 @@ public class Pesquisa {
 					System.out.println("");
 				} else {
 					System.out.println("");
-					System.out.println("Grade não encontrada.");
+					System.out.println("Grade nao encontrada.");
 					System.out.println("");
 				}
 				break;
@@ -54,7 +57,7 @@ public class Pesquisa {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção inválida.");
+				System.out.println("Opção invalida.");
 				System.out.println("");
 				break;
 			}
