@@ -2,10 +2,11 @@ package br.edu.fapi.sga.aviso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.aviso.controller.AvisoController;
 import br.edu.fapi.sga.model.aviso.Aviso;
 
 public class Pesquisa {
-    public void pesquisarAviso(Scanner scanner, Aviso aviso) {
+    public void pesquisarAviso(AvisoController avisoController, Scanner scanner, Aviso aviso) {
         int opcao;
         int defCodigo = 0;
         int codigo;
@@ -31,6 +32,8 @@ public class Pesquisa {
                     }
                 }while (defCodigo == 0);
                 if (codigo == aviso.getCodigo()){
+                    avisoController.pesquisarAviso(aviso);
+
                     System.out.println("");
                     System.out.println("Código: "+aviso.getCodigo());
                     System.out.println("Título: "+aviso.getTitulo());

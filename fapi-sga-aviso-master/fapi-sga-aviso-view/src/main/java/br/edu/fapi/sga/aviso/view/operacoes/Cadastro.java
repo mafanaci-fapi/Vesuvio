@@ -2,10 +2,11 @@ package br.edu.fapi.sga.aviso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.aviso.controller.AvisoController;
 import br.edu.fapi.sga.model.aviso.Aviso;
 
 public class Cadastro {
-    public void cadastrarAviso(Scanner scanner, Aviso aviso) {
+    public void cadastrarAviso(AvisoController avisoController, Scanner scanner, Aviso aviso) {
         int opcao;
         int defCodigo = 0;
         
@@ -33,12 +34,8 @@ public class Cadastro {
                 aviso.setTitulo(scanner.nextLine());
                 System.out.print("Digite o conteúdo do aviso: ");
                 aviso.setConteudo(scanner.nextLine());
-                
-                System.out.println("");
-                System.out.println("-------------------------------");
-                System.out.println("CADASTRO REALIZADO COM SUCESSO.");
-                System.out.println("-------------------------------");
-                System.out.println("");
+
+                avisoController.cadastrarAviso(aviso);
                 break;
             case 0:
                 System.out.println("");

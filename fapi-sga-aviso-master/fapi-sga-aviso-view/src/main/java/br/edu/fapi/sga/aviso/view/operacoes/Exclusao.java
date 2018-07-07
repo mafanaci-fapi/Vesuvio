@@ -2,10 +2,11 @@ package br.edu.fapi.sga.aviso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.aviso.controller.AvisoController;
 import br.edu.fapi.sga.model.aviso.Aviso;
 
 public class Exclusao {
-    public void excluirAviso(Scanner scanner, Aviso aviso) {
+    public void excluirAviso(AvisoController avisoController, Scanner scanner, Aviso aviso) {
         int opcao;
         int codigo;
         int defCodigo = 0;
@@ -33,11 +34,8 @@ public class Exclusao {
                 } while (defCodigo == 0);
                 if (codigo == aviso.getCodigo()){
                     aviso.setCodigo(-1);
-                    System.out.println("");
-                    System.out.println("---------------------------");
-                    System.out.println("AVISO EXCLUIDO COM SUCESSO.");
-                    System.out.println("---------------------------");
-                    System.out.println("");
+
+                    avisoController.excluirAviso(aviso);
                 }else{
                     System.out.println("");
                     System.out.println("Aviso não encontrado");

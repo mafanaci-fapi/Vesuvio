@@ -2,10 +2,11 @@ package br.edu.fapi.sga.aviso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.aviso.controller.AvisoController;
 import br.edu.fapi.sga.model.aviso.Aviso;
 
 public class Atualiza {
-    public void atualizarAviso(Scanner scanner, Aviso aviso) {
+    public void atualizarAviso(AvisoController avisoController, Scanner scanner, Aviso aviso) {
         int opcao;
         int codigo;
         int defCodigo = 0;
@@ -38,17 +39,14 @@ public class Atualiza {
                     aviso.setTitulo(scanner.nextLine());
                     System.out.print("Digite o novo conteúdo que o aviso conterá: ");
                     aviso.setConteudo(scanner.nextLine());
-                    
-                    System.out.println("");                       
-                    System.out.println("----------------------------------");
-                    System.out.println("ATUALIZAÇÃO REALIZADA COM SUCESSO.");
-                    System.out.println("----------------------------------");
-                    System.out.println("");
+
+                    avisoController.cadastrarAviso(aviso);
                 }else{
                     System.out.println("");
                     System.out.println("Aviso não encontrado");
                     System.out.println("");
-                }       
+                }
+
                 break;
             case 0:
                 System.out.println("");
