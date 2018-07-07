@@ -1,11 +1,14 @@
 package br.edu.fapi.sga.curso.view.operacoes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import br.edu.fapi.sga.curso.controller.CursoController;
 import br.edu.fapi.sga.model.curso.Curso;
 
 public class Atualiza {
-	public void atualizarCurso(Scanner scanner, Curso curso) {
+	public void atualizarCurso(CursoController cursoController, Scanner scanner, Curso curso) {
 		int opcao;
 		int codigo;
 		int defCodigo = 0;
@@ -32,6 +35,8 @@ public class Atualiza {
 					}
 				} while (defCodigo == 0);
 				if (codigo == curso.getCodigo()) {
+					List<String> disciplinasAux = new ArrayList();
+
 					System.out.println("");
 					System.out.println("ALTERAÇÃO DAS INFORMAÇÕES DA DISCIPLINA DO CÓGIDO: " + codigo);
 					System.out.println("");
@@ -41,20 +46,16 @@ public class Atualiza {
 					curso.setDuracao(scanner.nextLine());
 					System.out.println("Digite as disciplinas do curso. ");
 					System.out.print("1: ");
-					curso.setDisciplinas(0, scanner.nextLine());
+					disciplinasAux.add(scanner.nextLine());
 					System.out.print("2: ");
-					curso.setDisciplinas(1, scanner.nextLine());
+					disciplinasAux.add(scanner.nextLine());
 					System.out.print("3: ");
-					curso.setDisciplinas(2, scanner.nextLine());
+					disciplinasAux.add(scanner.nextLine());
 
-					System.out.println("");
-					System.out.println("----------------------------------");
-					System.out.println("ATUALIZAÇÃO REALIZADA COM SUCESSO.");
-					System.out.println("----------------------------------");
-					System.out.println("");
+					curso.setDisciplinas(disciplinasAux);
 				} else {
 					System.out.println("");
-					System.out.println("Curso não encontrado");
+					System.out.println("Curso nao encontrado");
 					System.out.println("");
 				}
 				break;

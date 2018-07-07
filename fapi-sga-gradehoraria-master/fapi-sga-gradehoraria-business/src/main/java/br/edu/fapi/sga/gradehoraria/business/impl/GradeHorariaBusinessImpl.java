@@ -27,6 +27,22 @@ public class GradeHorariaBusinessImpl implements GradeHorariaBusiness {
 
             do {
                 controla = false;
+                Integer temp = gradeHoraria.getCodigo();
+
+                if (temp == null){
+                    System.out.println();
+                    System.out.println("O codigo da grade nao pode estar vazio. Por favor digite novamente");
+                    gradeHoraria.setCodigo(scanner.nextInt());
+                    scanner.nextLine();
+                    System.out.println();
+                } else {
+                    controla = true;
+                }
+            } while (controla == false);
+
+
+            do {
+                controla = false;
                 if (gradeHoraria.getCurso().matches("^[0-9]*$") || gradeHoraria.getCurso().isEmpty()) {
                     System.out.println();
                     System.out.println("O nome do curso nao pode conter numeros ou não ser preenchido, por favor digite novamente.");

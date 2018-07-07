@@ -20,8 +20,6 @@ public class Listar {
 			System.out.println("----------------------------------");
 			System.out.println("LISTA DE TURMAS COM GRADE HORARIA.");
 			System.out.println("----------------------------------");
-			System.out.print("Turma: " + gradeHoraria.getTurma());
-			System.out.println("Curso:" + gradeHoraria.getCurso());
 			listarGradeHorario(listaGradeHoraria);
 
 

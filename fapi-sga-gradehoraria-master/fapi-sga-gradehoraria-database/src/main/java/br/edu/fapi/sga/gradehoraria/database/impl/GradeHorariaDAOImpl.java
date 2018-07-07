@@ -20,36 +20,7 @@ public class GradeHorariaDAOImpl implements GradeHorariaDAO {
 
     @Override
     public GradeHoraria retrieve(GradeHoraria gradeHoraria) {
-        System.out.println("Grade Horária:");
-        System.out.println("");
-        GradeHoraria gradeHorariaResultado = new GradeHoraria();
-        gradeHorariaResultado.setCodigo(gradeHoraria.getCodigo());
-        gradeHorariaResultado.setCurso(gradeHoraria.getCurso());
-        gradeHorariaResultado.setTurma(gradeHoraria.getTurma());
-        gradeHorariaResultado.setGrade(0,0, gradeHoraria.getGrade(0,0));
-        gradeHorariaResultado.setGrade(1,0,gradeHoraria.getGrade(1,0));
-        gradeHorariaResultado.setGrade(2,0,gradeHoraria.getGrade(2,0));
-        gradeHorariaResultado.setGrade(3,0,gradeHoraria.getGrade(3,0));
-
-        gradeHorariaResultado.setGrade(0,1,gradeHoraria.getGrade(0,1));
-        gradeHorariaResultado.setGrade(1,1,gradeHoraria.getGrade(1,1));
-        gradeHorariaResultado.setGrade(2,1,gradeHoraria.getGrade(2,1));
-        gradeHorariaResultado.setGrade(3,1,gradeHoraria.getGrade(3,1));
-
-        gradeHorariaResultado.setGrade(0,2,gradeHoraria.getGrade(0,2));
-        gradeHorariaResultado.setGrade(1,2,gradeHoraria.getGrade(1,2));
-        gradeHorariaResultado.setGrade(2,2,gradeHoraria.getGrade(2,2));
-        gradeHorariaResultado.setGrade(3,2,gradeHoraria.getGrade(3,2));
-
-        gradeHorariaResultado.setGrade(0,3,gradeHoraria.getGrade(0,3));
-        gradeHorariaResultado.setGrade(1,3,gradeHoraria.getGrade(1,3));
-        gradeHorariaResultado.setGrade(2,3,gradeHoraria.getGrade(2,3));
-        gradeHorariaResultado.setGrade(3,3,gradeHoraria.getGrade(3,3));
-
-        gradeHorariaResultado.setGrade(0,4,gradeHoraria.getGrade(0,4));
-        gradeHorariaResultado.setGrade(1,4,gradeHoraria.getGrade(1,4));
-        gradeHorariaResultado.setGrade(2,4,gradeHoraria.getGrade(2,4));
-        gradeHorariaResultado.setGrade(3,4,gradeHoraria.getGrade(3,4));
+        GradeHoraria gradeHorariaResultado = gradeHoraria;
 
         System.out.println("");
         System.out.println("--------------------------");
@@ -154,7 +125,7 @@ public class GradeHorariaDAOImpl implements GradeHorariaDAO {
         gradeHorariaResultado2.setGrade(2 , 4 ,"Analise e Projeto");
         gradeHorariaResultado2.setGrade(3 , 4 ,"Analise e Projeto");
 
-        ArrayList<GradeHoraria> listaGradesHorarias = new ArrayList();
+        List<GradeHoraria> listaGradesHorarias = new ArrayList();
         listaGradesHorarias.add(gradeHorariaResultado1);
         listaGradesHorarias.add(gradeHorariaResultado2);
         listaGradesHorarias.add(gradeHorariaResultado3);

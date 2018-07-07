@@ -2,10 +2,11 @@ package br.edu.fapi.sga.curso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.curso.controller.CursoController;
 import br.edu.fapi.sga.model.curso.Curso;
 
 public class Exclusao {
-	public void excluirCurso(Scanner scanner, Curso curso) {
+	public void excluirCurso(CursoController cursoController, Scanner scanner, Curso curso) {
 		int opcao;
 		int codigo;
 		int defCodigo = 0;
@@ -19,20 +20,24 @@ public class Exclusao {
 			switch (opcao) {
 			case 1:
 				System.out.println("");
-				System.out.println("EXCLUSÃO DE CURSO.");
+				System.out.println("EXCLUSAO DE CURSO.");
 				do {
 					System.out.print("Digite o codigo do curso: ");
 					codigo = scanner.nextInt();
 					scanner.nextLine();
 					if (codigo < 0) {
-						System.out.println("O código digitado não pode ser menor que 0. Por favor digite novamente.");
+						System.out.println("O codigo digitado não pode ser menor que 0. Por favor digite novamente.");
 						System.out.println("");
 					} else {
 						defCodigo = 1;
 					}
 				} while (defCodigo == 0);
+
 				if (codigo == curso.getCodigo()) {
 					curso.setCodigo(-1);
+
+					cursoController.excluirCurso(curso);
+
 					System.out.println("");
 					System.out.println("---------------------------");
 					System.out.println("CURSO EXCLUIDO COM SUCESSO.");
@@ -40,7 +45,7 @@ public class Exclusao {
 					System.out.println("");
 				} else {
 					System.out.println("");
-					System.out.println("Curso não encontrado");
+					System.out.println("Curso nao encontrado");
 					System.out.println("");
 				}
 				break;
@@ -48,7 +53,7 @@ public class Exclusao {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção inválida");
+				System.out.println("Opçao invalida");
 				System.out.println("");
 				break;
 			}

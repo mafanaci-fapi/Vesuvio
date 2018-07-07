@@ -2,6 +2,8 @@ package br.edu.fapi.sga.curso.view.menu;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.curso.controller.CursoController;
+import br.edu.fapi.sga.curso.controller.impl.CursoControllerImpl;
 import br.edu.fapi.sga.curso.view.operacoes.Atualiza;
 import br.edu.fapi.sga.curso.view.operacoes.Cadastro;
 import br.edu.fapi.sga.curso.view.operacoes.Exclusao;
@@ -11,13 +13,15 @@ import br.edu.fapi.sga.model.curso.Curso;
 
 public class Menu {
 	public void menu() {
+		CursoController cursoController = new CursoControllerImpl();
+
 		int opcao;
 		int voltar = 1;
 		Scanner scanner = new Scanner(System.in);
 		Curso curso = new Curso();
 
 		do {
-			System.out.println("Escolha uma opção.");
+			System.out.println("Escolha uma opcao.");
 			System.out.println("1 - Cadastrar um curso.");
 			System.out.println("2 - Excluir um curso.");
 			System.out.println("3 - Atualizar um curso.");
@@ -31,23 +35,23 @@ public class Menu {
 			switch (opcao) {
 			case 1:
 				Cadastro cadastro = new Cadastro();
-				cadastro.cadastrarCurso(scanner, curso);
+				cadastro.cadastrarCurso(cursoController, scanner, curso);
 				break;
 			case 2:
 				Exclusao exclusao = new Exclusao();
-				exclusao.excluirCurso(scanner, curso);
+				exclusao.excluirCurso(cursoController, scanner, curso);
 				break;
 			case 3:
 				Atualiza atualiza = new Atualiza();
-				atualiza.atualizarCurso(scanner, curso);
+				atualiza.atualizarCurso(cursoController, scanner, curso);
 				break;
 			case 4:
 				Pesquisa pesquisa = new Pesquisa();
-				pesquisa.pesquisarCurso(scanner, curso);
+				pesquisa.pesquisarCurso(cursoController, scanner, curso);
 				break;
 			case 5:
 				Listar listar = new Listar();
-				listar.listarCurso(curso);
+				listar.listarCurso(cursoController, curso);
 				break;
 			case 0:
 				System.out.println("");

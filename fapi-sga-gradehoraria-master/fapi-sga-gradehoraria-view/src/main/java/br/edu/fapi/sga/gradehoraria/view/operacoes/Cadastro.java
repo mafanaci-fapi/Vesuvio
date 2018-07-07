@@ -35,51 +35,66 @@ public class Cadastro {
 				System.out.print("Digite a turma da grade: ");
 				gradeHoraria.setTurma(scanner.nextLine());
 				System.out.println("");
+
+
 				System.out.println("Digite as aulas de segunda-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				String defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 0, defAula);
 				gradeHoraria.setGrade(1, 0, defAula);
+
 				System.out.print("3a/4a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(2, 0, defAula);
 				gradeHoraria.setGrade(3, 0, defAula);
 				System.out.println("");
+
+
 				System.out.println("Digite as aulas de terca-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 1, defAula);
 				gradeHoraria.setGrade(1, 1, defAula);
+
 				System.out.print("3a/4a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(2, 1, defAula);
 				gradeHoraria.setGrade(3, 1, defAula);
 				System.out.println("");
+
+
 				System.out.println("Digite as aulas de quarta-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 2, defAula);
 				gradeHoraria.setGrade(1, 2, defAula);
+
 				System.out.print("3a/4a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(2, 2, defAula);
 				gradeHoraria.setGrade(3, 2, defAula);
 				System.out.println("");
+
+
 				System.out.println("Digite as aulas de quinta-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 3, defAula);
 				gradeHoraria.setGrade(1, 3, defAula);
+
 				System.out.print("3a/4a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(2, 3, defAula);
 				gradeHoraria.setGrade(3, 3, defAula);
 				System.out.println("");
+
+
 				System.out.println("Digite as aulas de sexta-feira. ");
 				System.out.print("1a/2a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(0, 4, defAula);
 				gradeHoraria.setGrade(1, 4, defAula);
+
 				System.out.print("3a/4a Aulas: ");
 				defAula = scanner.nextLine();
 				gradeHoraria.setGrade(2, 4, defAula);

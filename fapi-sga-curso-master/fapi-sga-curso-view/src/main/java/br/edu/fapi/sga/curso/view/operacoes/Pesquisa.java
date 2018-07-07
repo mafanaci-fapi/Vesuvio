@@ -2,10 +2,11 @@ package br.edu.fapi.sga.curso.view.operacoes;
 
 import java.util.Scanner;
 
+import br.edu.fapi.sga.curso.controller.CursoController;
 import br.edu.fapi.sga.model.curso.Curso;
 
 public class Pesquisa {
-	public void pesquisarCurso(Scanner scanner, Curso curso) {
+	public void pesquisarCurso(CursoController cursoController, Scanner scanner, Curso curso) {
 		int opcao;
 		int codigo;
 		int defCodigo = 0;
@@ -32,20 +33,17 @@ public class Pesquisa {
 					}
 				} while (defCodigo == 0);
 				if (codigo == curso.getCodigo()) {
-					System.out.println("");
+					cursoController.pesquisarCurso(curso);
+
 					System.out.println("Código: " + curso.getCodigo());
 					System.out.println("Nome: " + curso.getNome());
 					System.out.println("Duração: " + curso.getDuracao());
 					System.out.println("Disciplinas: ");
-					System.out.println(curso.getDisciplinas(0));
-					System.out.println(" --- ");
-					System.out.println(curso.getDisciplinas(1));
-					System.out.println(" --- ");
-					System.out.println(curso.getDisciplinas(2));
-					System.out.println("");
+                    System.out.println(curso.getDisciplinas());
+
 				} else {
 					System.out.println("");
-					System.out.println("Curso não encontrado.");
+					System.out.println("Curso nao encontrado.");
 					System.out.println("");
 				}
 				break;
@@ -53,7 +51,7 @@ public class Pesquisa {
 				System.out.println("");
 				break;
 			default:
-				System.out.println("Opção inválida.");
+				System.out.println("Opção invalida.");
 				System.out.println("");
 				break;
 			}

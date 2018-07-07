@@ -1,11 +1,14 @@
 package br.edu.fapi.sga.curso.view.operacoes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import br.edu.fapi.sga.curso.controller.CursoController;
 import br.edu.fapi.sga.model.curso.Curso;
 
 public class Cadastro {
-	public void cadastrarCurso(Scanner scanner, Curso curso) {
+	public void cadastrarCurso(CursoController cursoController, Scanner scanner, Curso curso) {
 		int opcao;
 		int defCodigo = 0;
 
@@ -30,20 +33,21 @@ public class Cadastro {
 						defCodigo = 1;
 					}
 				} while (defCodigo == 0);
+				List<String> disciplinasAux = new ArrayList();
 				System.out.print("Digite o nome do curso: ");
 				curso.setNome(scanner.nextLine());
 				System.out.print("Digite a duração do curso: ");
 				curso.setDuracao(scanner.nextLine());
 				System.out.print("Digite a disciplina 1 do curso: ");
-				curso.setDisciplinas(0, scanner.nextLine());
+				disciplinasAux.add(scanner.nextLine());
 				System.out.print("Digite a disciplina 2 do curso: ");
-				curso.setDisciplinas(1, scanner.nextLine());
+				disciplinasAux.add(scanner.nextLine());
 				System.out.print("Digite a disciplina 3 do curso: ");
-				curso.setDisciplinas(2, scanner.nextLine());
-				System.out.println("-------------------------------");
-				System.out.println("CADASTRO REALIZADO COM SUCESSO.");
-				System.out.println("-------------------------------");
-				System.out.println("");
+				disciplinasAux.add(scanner.nextLine());
+
+				curso.setDisciplinas(disciplinasAux);
+
+				cursoController.cadastrarCurso(curso);
 				break;
 			case 0:
 				System.out.println("");
